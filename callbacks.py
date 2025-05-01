@@ -45,9 +45,9 @@ def register_callbacks(app):
         left_fig = generate_line_graph(graph_left)
         right_fig = generate_line_graph(graph_right)
 
-        bleach_counts = filtered.groupby(['Year', 'Bleaching Severity']).size().reset_index(name='Count')
+        bleach_counts = filtered.groupby(['Year', 'Bleaching Severity']).size().reset_index(name='Number of Observations')
         bleach_fig = px.bar(
-            bleach_counts, x='Year', y='Count', color='Bleaching Severity',
+            bleach_counts, x='Year', y='Number of Observations', color='Bleaching Severity',
             title=f'Bleaching Severity Trends - {selected_location}',
             category_orders={'Bleaching Severity': ['None', 'Low', 'Medium', 'High']},
             color_discrete_sequence=['#91c9f7', '#ffe28a', '#ffa15a', '#d9534f']
