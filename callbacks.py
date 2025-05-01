@@ -49,7 +49,8 @@ def register_callbacks(app):
         bleach_fig = px.bar(
             bleach_counts, x='Year', y='Count', color='Bleaching Severity',
             title=f'Bleaching Severity Trends - {selected_location}',
-            category_orders={'Bleaching Severity': ['None', 'Low', 'Medium', 'High']}
+            category_orders={'Bleaching Severity': ['None', 'Low', 'Medium', 'High']},
+            color_discrete_sequence=['#91c9f7', '#ffe28a', '#ffa15a', '#d9534f']
         )
 
         return (
